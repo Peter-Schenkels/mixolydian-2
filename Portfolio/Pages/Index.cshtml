@@ -1,0 +1,46 @@
+﻿@page
+@using Portfolio.Components
+@model IndexModel
+@{
+	ViewData["Title"] = "Home page";
+}
+<div class="container-fluid bd-content">
+	<div>
+		<div>
+			<h3>Hello and welcome to my website!</h3>
+			<div>
+				<p style="font-size: 0.5em;">
+					My name is Peter Schenkels, and I am a game programmer with a background in Computer Science from HU University of Applied Sciences. Previously, I worked at Ronimo Games until the unfortunate bankruptcy of the company. However, I've taken this opportunity to embark on new ventures.
+				<p style="font-size: 0.5em;">
+					My passion for game development remains strong, and I'm currently working on a solo game project that I'm excited to share with you in the future. Throughout my career, I've honed my skills in programming languages such as C++, C#, and Python, and I'm eager to apply these skills to my new endeavors.
+				</p>
+				<p style="font-size: 0.5em;">
+					Aside from game development, I also dedicate my time to other creative pursuits, including music production. As I explore these various interests, I look forward to sharing my journey and creations with you.
+				</p>
+				<p style="font-size: 0.5em;">
+					Thank you for visiting my website,
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<iframe src="https://www.youtube.com/embed/iBw0BFuhFMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<div class="software-about">
+		<p style="font-size: 0.5em;">
+			Game Development Highlight reel	2019 - 2022	(is outdated and will be updated soon)
+		<p />
+	</div>
+
+	<div class="border-top border-bottom border-light border-4 mp-0">
+		<h5 class="text-center" style="margin-top: 3vh; margin-bottom: 1vh;">Recent Updates</h5>
+		@(await Html.RenderComponentAsync<MostRecentProject>(RenderMode.ServerPrerendered))
+	</div>
+
+	<div class="border-bottom border-light border-4 ">
+		<h5 class="text-center" style="margin-top: 3vh; margin-bottom: 1vh;">Latest Music Release</h5>
+		@(await Html.RenderComponentAsync<LatestMusicRelease>(RenderMode.ServerPrerendered))
+	</div>
+	<div class="mx-auto">
+		<img class="text-center" style="width: 5vw; height:auto; margin-top:1vh;" src="~/img/decoration/pinio.png" />
+	</div>
+</div>

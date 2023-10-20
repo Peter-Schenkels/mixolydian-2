@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="h-100" data-bs-theme="dark">
+
+
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - Portfolio</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/Portfolio.styles.css" asp-append-version="true" />
+	<style type="text/css">
+		@@font-face {
+			font-family: Hooge;
+			src: url("fonts/hoog0554.ttf");
+		}
+
+		.custom {
+			font-family: Hooge;
+			/*padding: 0.5rem;*/
+		}
+
+		.navbar {
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;
+		}
+
+		.nowrap {
+			font-size: 3vw;
+			word-break: keep-all !important;
+		}
+
+		@@media (max-width: 830px) {
+			.hidden-mobile {
+				max-height: 0;
+				max-width: 0;
+				display: none;
+			}
+		}
+
+		@@media (max-width: 830px) {
+			.show-mobile {
+				display: initial;
+			}
+		}
+
+		@@media (min-width: 830px) {
+			.show-mobile {
+				display: none;
+			}
+		}
+
+		@@media (max-height: 500px) {
+			.sidebar  {
+			overflow-y: scroll;
+			}
+		}
+
+
+		.fixed-top-collumn {
+			display: flex;
+			position: fixed;
+			top: 47px;
+			left: 22vw;
+			bottom: 0;
+		}
+
+		@@media (max-width: 830px) {
+			.fixed-top-collumn {
+				display: none;
+			}
+		}
+
+		header {
+			height: 7vh;
+		}
+
+		html {
+			font-size: 1rem;
+			height: max-content;
+		}
+
+		body {
+			min-height: 100vh;
+			overflow-y: hidden;
+		}
+
+		@@include media-breakpoint-up(sm) {
+			html {
+				font-size: 0.8rem;
+			}
+		}
+
+		@@include media-breakpoint-up(md) {
+			html {
+				font-size: 0.4rem;
+			}
+		}
+
+		@@include media-breakpoint-up(lg) {
+			html {
+				font-size: 0.2rem;
+			}
+		}
+
+		.icon {
+			image-rendering: pixelated;
+			padding: 0.5rem;
+		}
+
+		.button:hover img {
+			filter: invert(100%);
+		}
+
+		.button:hover a {
+			filter: invert(100%);
+		}
+
+		.button:hover {
+			background-color: white;
+		}
+
+		.img-cover {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: auto; /* Set your fixed Limit */
+			object-fit: cover;
+		}
+
+		.sidebar {
+			width: 20vw;
+			margin-top: 7vh;
+			margin-left: 16vw;
+			height: 85vh;
+			padding: 1vw;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: #000;
+			overflow-y: hidden;
+		}
+
+		.sidebar a:hover {
+			color: #f1f1f1;
+		}
+
+		.main {
+			margin-left: 35vw; /* Same as the width + margin left of the sidenav */
+			margin-right: 20vw;
+			width: 45vw;
+			font-size: 28px; /* Increased text to enable scrolling */
+			padding: 0px 10px;
+		}
+
+		@@media (max-width: 830px) {
+			.main
+			{
+				margin-left: 15vw;
+				margin-right: 15vw;
+				width: 70vw;
+			}
+
+			.nav-item
+			{
+				font-size: 0.70em;
+				margin: 0 0 0 0;
+				padding: 0 0 0 0;
+			}
+		}
+
+		.parallax {
+			perspective: 300px;
+			height: 85vh;
+			overflow-x: hidden;
+			overflow-y: auto;
+		}
+
+		.parallax__layer {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+
+		.parallax__group {
+			position: relative;
+			transform-style: preserve-3d;
+			image-rendering: pixelated;
+		}
+
+		.parallax__layer--base {
+			transform: translateZ(0);
+			z-index: 0;
+		}
+
+		.galaxy {
+			image-rendering: pixelated;
+			overflow: visible;
+			height: 75vh;
+		}
+
+		.parallax__layer--7 {
+			transform: translateZ(-20000px) scale(80.5);
+			z-index: -7;
+			background-image: url("img/decoration/clouds-7.png");
+			background-repeat: repeat;
+			background-size: 50%;
+		}
+
+		.parallax__layer--6 {
+			transform: translateZ(-10000px) scale(40.5);
+			z-index: -6;
+			background-image: url("img/decoration/stars-6.png");
+			background-repeat: repeat;
+			background-size: 50%;
+		}
+
+		.parallax__layer--5 {
+			transform: translateZ(-4000px) scale(17.5);
+			z-index: -5;
+			background-image: url("img/decoration/stars-5.png");
+			background-repeat: repeat;
+			background-size: 50%;
+		}
+
+		.parallax__layer--4 {
+			transform: translateZ(-3000px) scale(15);
+			z-index: -4;
+			background-image: url("img/decoration/stars-4.png");
+			background-repeat: repeat;
+			background-size: 50%;
+		}
+
+		.parallax__layer--3 {
+			transform: translateZ(-2000px) scale(12.5);
+			z-index: -3;
+			background-image: url("img/decoration/stars-3.png");
+			background-repeat: repeat;
+			background-size: 50%;
+		}
+
+		.parallax__layer--2 {
+			transform: translateZ(-400px) scale(3.1);
+			z-index: -2;
+			background-image: url("img/decoration/planet-2.png");
+			background-repeat: repeat;
+			background-size: 50%;
+		}
+
+		.parallax__layer--1 {
+			transform: translateZ(-300px) scale(2.1);
+			z-index: -1;
+			background-image: url("img/decoration/planet-1.png");
+			background-repeat: repeat;
+			background-size: 50% auto;
+		}
+
+		.wrapper {
+			max-height: 20vh;
+		}
+
+		.a h2 {
+		  font-size: 1em;
+		}
+
+		@@container (min-width: 700px) {
+			.nav-item a {
+				font-size: 2em;
+			}
+		}
+
+
+	</style>
+</head>
+
+<body class="bg-black custom m-0" style="text-size-adjust: auto;">
+
+	<header class="container-fluid bg-black sticky-top custom border border-4 border-light ">
+		<div class="row justify-content-center align-items-center" style="height: 100%">
+			<div class="col-auto hidden-mobile border-4 border-end border-light" style="height: 100%">
+				<img src="img/decoration/pinio.png" style="height: 100%; width: auto; margin-right: 0; object-fit: cover;" />
+			</div>
+			<div class=" col-auto justify-content-center h-100 mx-auto my-auto">
+				<ul class="nav justify-content-center align-items-center my-auto">
+					<li class="nav-item button">
+						<a class="nav-link link-light my-auto" style="text-size-adjust: auto;" asp-area="" asp-page="/Index">HOME</a>
+					</li>
+					<p class="text-light align-middle my-auto hidden-mobile" >-</p>
+					<li class="nav-item button">
+						<a class="nav-link link-light my-auto" asp-area="" asp-page="/Projects">PROJECTS</a>
+					</li>
+					<p class="text-light align-middle my-auto hidden-mobile">-</p>
+					<li class="nav-item button">
+						<a class="nav-link link-light my-auto" asp-area="" asp-page="/Music">MUSIC</a>
+					</li>
+					<p class="text-light align-middle my-auto hidden-mobile">-</p>
+					<li class="nav-item button">
+						<a class="nav-link link-light my-auto" asp-area="" asp-page="/Art">ART</a>
+					</li>
+					<p class="text-light align-middle my-auto hidden-mobile">-</p>
+					<li class="nav-item button">
+						<a class="nav-link link-light my-auto" asp-area="" asp-page="/Blogs">BLOGS</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-auto my-auto hidden-mobile">
+				<img src="img/decoration/program.png" style="height: 100%; width: auto; margin-left: 0;">
+			</div>
+		</div>
+	</header>
+
+	<div class="container h-100 m-0 p-0" style="min-width: 100vw;">
+		<div class="hidden-mobile sidebar border-start border-end border-4 border-light">
+			<div style="height: 8px" class="border-top border-bottom border-light border-2 my-1"></div>
+			<div class="mx-auto text-center">
+				<img src="img/mugshot/mugshot.png" style="width: 10vw; height: auto" class="img-fluid p-3 " />
+			</div>
+
+			<div style="height: 8px" class="border-top border-bottom border-light border-2 my-1"></div>
+			<p class="fs-4 lh-1 text-capitalize">Peter Schenkels</p>
+
+			<div class="hidden-mobile-horizontal">
+				<p class="fs-6 lh-1">Game Developer, Musician, Producer, Programmer</p>
+				<div style="height: 4px" class="border-bottom border-light border-2 my-1"></div>
+			</div>
+			<div class="container">
+				<div style="height: 4px" class="border-bottom border-light border-2 my-1"></div>
+				<div class="row">
+					<a href="https://open.spotify.com/artist/7HfHtWRyLGCu0ND1gX8zCu?si=C9G3P5SHS2CBFtWJGUym9Q" class="col button mw-25" style="width: 20%;">
+						<img class="icon border border-light border-2 w-100 h-100" src="img/icons/spotify.png" />
+					</a>
+					<a href="https://www.linkedin.com/in/peter-schenkels/" class="col button mw-25" style="width: 20%">
+						<img class="icon border border-light border-2 w-100 h-100" src="img/icons/linkedin.png" />
+					</a>
+					<a href="https://github.com/Peter-Schenkels/" class="col button mw-25" style="width: 20%">
+						<img class="icon border border-light border-2 w-100 h-100" src="img/icons/github.png" />
+					</a>
+					<a href="mailto:peteraschenkels@gmail.com"class="col button mw-25" style="width: 20%">
+						<img class="icon border border-light border-2 w-100 h-100" src="img/icons/email.png" />
+					</a>
+				</div>
+				<div style="height: 4px" class="border-bottom border-light border-2 my-1"></div>
+			</div>
+			<div class="hidden-mobile-horizontal">
+				<div style="height: 4px" class="border-bottom border-light border-2 my-1"></div>
+				<p class="fs-6 lh-1">Work Experience:</p>
+				<p class="fs-6 lh-1">* Ronimo Games: 1 Year</p>
+				<p class="fs-6 lh-1">* Music Producer: 5 Years</p>
+				<div style="height: 4px" class="border-bottom border-light border-2 my-1"></div>
+				<p class="fs-6 lh-1">Education:</p>
+				<p class="fs-6 lh-1">* Bachelors Degree in Technical Computer Science
+				<p />
+			</div>
+		</div>
+		<div class="border border-light border-4 border-bottom-0 border-top-0">
+			<div class="parallax">
+				<div class="parallax__layer parallax__layer--7 galaxy"></div>
+				<div class="parallax__layer parallax__layer--6 galaxy"></div>
+				<div class="parallax__layer parallax__layer--5 galaxy"></div>
+				<div class="parallax__layer parallax__layer--4 galaxy"></div>
+				<div class="parallax__layer parallax__layer--3 galaxy"></div>
+				<div class="parallax__layer parallax__layer--2 galaxy"></div>
+				<div class="parallax__layer parallax__layer--1 galaxy"></div>
+				<div class="parallax__layer parallax__layer--base"  style="height: 75vh; min-height: 75vh;">
+					<main role="main" class="main text-light bd-main border-start border-end border-light border-4 bg-black">
+						@RenderBody()
+					</main>
+				</div>
+			</div>
+		</div>
+		<div style="width: 100vw" class="border border-4 border-light bg-black">❤️</div>
+		<!-- <div class="show-mobile">No mobile support yet, enable show page as desktop in your browser to view this page</div>	-->
+	</div>
+
+
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+
+	@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

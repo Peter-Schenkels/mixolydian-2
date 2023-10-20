@@ -1,0 +1,90 @@
+[
+	{
+		"Name": "House of Usher - Single",
+		"Genres": "Drum & Bass",
+		"cover": "Https://i1.sndcdn.com/artworks-000375067326-p6hwvq-t500x500.jpg",
+		"url": "https://soundcloud.com/poosacky/house-of-usher",
+		"artist": "Poosac",
+		"date": "08-07-2018"
+	},
+	{
+		"Name": "Don't Cry - Single",
+		"Genres": "Drum & Bass",
+		"cover": "https://i1.sndcdn.com/artworks-000310866393-v3jy39-t500x500.jpg",
+		"url": "https://soundcloud.com/poosacky/poosac-dont-cry",
+		"artist": "Poosac",
+		"date": "03-04-2018"
+	},
+	{
+		"Name": "Crazy - EP",
+		"Genres": "EDM, Future Bass, Chiptune, IDM, DnB",
+		"cover": "https://i1.sndcdn.com/artworks-000349047789-z7bi2m-t500x500.jpg",
+		"url": "https://soundcloud.com/poosacky/6-crazy",
+		"artist": "Poosac",
+		"date": "10-05-2018"
+	},
+	{
+		"Name": "Android Funk - Single",
+		"Genres": "Bitpop",
+		"cover": "https://i1.sndcdn.com/artworks-000363047466-p1k6zl-t500x500.jpg",
+		"url": "https://soundcloud.com/poosacky/android-funk",
+		"artist": "Poosac",
+		"date": "06-20-2018"
+	},
+	{
+		"Name": "Space - Album",
+		"Genres": "Chiptune, Bitpop, IDM",
+		"cover": "img/coverart/space.jpg",
+		"url": "https://ex-lyd.bandcamp.com/album/space",
+		"artist": "EX-LYD",
+		"date": "07-19-2019"
+	},
+	{
+		"Name": "Chip Heat - Album",
+		"Genres": "Digital Fusion",
+		"cover": "img/coverart/chiptune metro.png",
+		"url": "https://ex-lyd.bandcamp.com/album/chip-heat",
+		"artist": "EX-LYD",
+		"date": "07-26-2020"
+	},
+	{
+		"Name": "High Tide - Album",
+		"Genres": "Digital Fusion",
+		"cover": "img/coverart/high tide.jpg",
+		"url": "https://ex-lyd.bandcamp.com/album/high-tide",
+		"artist": "EX-LYD",
+		"date": "08-23-2021"
+	},
+	{
+		"Name": "Sky World / Moony Moon (Extended Version)",
+		"Genres": "Digital Fusion, DnB",
+		"cover": "img/coverart/ms.jpg",
+		"url": "https://ex-lyd.bandcamp.com/album/sky-world-moony-moon-extended-version",
+		"artist": "EX-LYD",
+		"date": "03-14-2022"
+	},
+	{
+		"Name": "Till Sunrise - Album",
+		"Genres": "Digital Fusion, Trance, DnB",
+		"cover": "img/coverart/till sunrise.jpg",
+		"url": "https://ex-lyd.bandcamp.com/album/till-sunrise",
+		"artist": "EX-LYD",
+		"date": "04-23-2023"
+	},
+	{
+		"Name": "Epoch - Single",
+		"Genres": "Chiptune",
+		"cover": "img/coverart/epoch.jpg",
+		"url": "https://ex-lyd.bandcamp.com/track/epoch",
+		"artist": "EX-LYD",
+		"date": "08-26-2023"
+	},
+	{
+		"Name": "Spaceman - Single",
+		"Genres": "Digital Fusion",
+		"cover": "img/coverart/spaceman.png",
+		"url": "https://ex-lyd.bandcamp.com/track/spaceman",
+		"artist": "EX-LYD",
+		"date": "06-04-2020"
+	}
+]

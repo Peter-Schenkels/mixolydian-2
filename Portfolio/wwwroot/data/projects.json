@@ -1,0 +1,101 @@
+[
+	{
+		"Name": "Traffic Jam",
+		"Description": "A quick, fun, arcadey and dark game, where you play as traffic control, but the goals is the opposite of what traffic control is supposed to do. This game was made during the GMTK 2023 Game Jam. It was alot of fun doing this with my co-workers. I did some programming and made most of the art.",
+		"img": "img/banners/trafficjam.png",
+		"ProjectUrl": "https://peterschenkels.itch.io/traffic-jam-gmtk2023",
+		"Date" : "07-10-2023" 
+	},
+	{
+		"Name": "Musical-3D-Printer",
+		"Description": "A fun easy script that turns a midi file into a GCode file which a 3D printer can execute/play (currently only plays one note at the same time)\n\n \"3D music\" ~W.A. Visser",
+		"img": "img/banners/musical-3d-printer-banner.png",
+		"ProjectUrl": "https://github.com/Peter-Schenkels/Musical-3D-Printer",
+		"Date": "05-01-2022"
+	},
+	{
+		"Name": "Jinkel Delivery",
+		"Description": "An arcade-style 2D side-scrolling game! In this game, you take on the role of a pizza delivery person, riding your scooter through a procedurally generated world filled with hilarious visuals. This game was created by me as part of my minor in game development in Finland, using C# and Unity. From the programming to the assets, I handled every aspect of its development.",
+		"img": "img/banners/jinkel-delivery-banner.png",
+		"ProjectUrl": "https://github.com/Peter-Schenkels/Jinkel-Delivery",
+		"Date": "10-01-2021"
+	},
+	{
+		"Name": "Arkel Craft",
+		"Description": "A very WIP minecraft clone, for getting some more hands on experience in unity",
+		"img": "img/banners/arkel-craft-banner.png",
+		"ProjectUrl": "https://github.com/Peter-Schenkels/Arkel-Craft",
+		"Date": "05-24-2022"
+	},
+	{
+		"Name": "Karkel Lang",
+		"Description": "As part of a school asignment, I created an interpreted and (arm assembly) compiled programming language using Python. As extra we needed to write the compiler and interpreter in a functional style. This project was a very fun and challenging assignment. More information about the language, including its syntax and usage, is available on my GitHub repository.",
+		"img": "img/banners/karkel-lang-banner.png",
+		"ProjectUrl": "https://github.com/Peter-Schenkels/KarkelLang---HU-ATP",
+		"Date":  "04-08-2022"
+	},
+	{
+		"Name": "Computer Vision & Geometry Dash",
+		"Description": "For a school project, I tackled a challenging problem using computer vision. The goal was to detect obstacles and platforms in the popular game Geometry Dash, using classical computer vision techniques.",
+		"img": "img/banners/geoemtry-dash-computer-vision.png",
+		"ProjectUrl": "https://github.com/Peter-Schenkels/Geometry-Dash-Object-Detection",
+		"Date": "03-31-2022"
+	},
+	{
+		"Name": "Twits Desktop",
+		"Description": "Say goodbye to the discontinued Twitch desktop app and hello to this app! This app is designed to provide the same functionality as the original Twitch desktop app, including streaming your favorite streamers and live notifications. Created using C# and WPF.",
+		"img": "img/banners/twitch-software-banner.png",
+		"ProjectUrl": "https://github.com/Peter-Schenkels/Twits-Desktop",
+		"Date": "05-18-2022"
+	},
+	{
+		"Name": "Soap Messenger",
+		"Description": "A small messenger client/server for talking with friends over the internet. I learnt alot about c# and sockets while making this project. This messenger has basic features like sending messages, sending images, setting your own username, profile picture and color. More features like sending different files are coming up!",
+		"img": "img/banners/soappreview.png",
+		"ProjectUrl": "https://github.com/Peter-Schenkels/Soap-Messenger",
+		"Date": "01-19-2022"
+	},
+	{
+		"Name": "Hobo Simulator",
+		"Description": "I was part of a group project in Finland where we created an exciting game together. In the project, I took charge of the movement mechanics and created most of the assets, including the Hobo model/animation, the kitchen, and the music. Additionally, I developed scripts for the Hobo movement and sound effects.",
+		"img": "img/banners/hobo-sim-banner.png",
+		"ProjectUrl": "https://github.com/curry0/Hobo-Simulator-in-Unity",
+		"Date": "10-19-2021"
+	},
+	{
+		"Name": "Laser Tag",
+		"Description": "For a school project, my team and I were tasked with developing a laser tag game from scratch using C++ and Arduino Due. As part of the team, I contributed to the project by implementing the Infra Red receiver and sender components.These vital components were responsible for detecting and transmitting laser tag signals during gameplay. Through this project, I gained valuable experience in C++ embedded programming",
+		"img": "img/banners/lasertag.jpg",
+		"ProjectUrl": "https://github.com/bgeer/lasertag",
+		"Date": "07-11-2019"
+	},
+	{
+		"Name": "Port Forward",
+		"Description": "As part of a school project, my team and I developed an exciting 2D game using C++ and SFML. Our game was a unique take on the popular Portal franchise, where players could shift between dimensions to solve puzzles with their portal gun. In the project, I took charge of resource management, level editor development, basic physics implementation, and other inner game engine workings. Additionally, I created most of the sprites that brought our game to life.",
+		"img": "img/banners/portal.gif",
+		"ProjectUrl": "https://github.com/Peter-Schenkels/Portforward-Game-Project",
+		"Date": "01-31-2020"
+	},
+	{
+		"Name": "Pixel Visualiser",
+		"Description": "A framework which allows user/programmers to easily draw pixel on screen. Cool for plotting some math graphs or just for fun. Made using OpenGL, C++ & GLUT. \nThis project is being blogged by me, check it out ;)",
+		"img": "https://github.com/Peter-Schenkels/Pixel-Visualiser/blob/main/Examples/Colored%20Squares/squares.gif?raw=true",
+		"ProjectUrl": "https://github.com/Peter-Schenkels/Pixel-Visualiser",
+		"Date": "06-07-2023"
+	},
+	{
+		"Name": "Boulder Hall Manager",
+		"Description": "An unreleased managment game, where you are the manager of a boulder hall. Design your own routes and boulder hall and keep the visitors entertained and satisfied. Made using C# and Unity. \nThis project is being blogged by me, check it out ;). Demo will be available soon.",
+		"img": "img/banners/bhm.png",
+		"ProjectUrl": "",
+		"Date": "10-19-2023"
+	},
+
+	{
+		"Name": "peterschenkels.nl",
+		"Description": "Made with Love ❤️ (and ASP.net)",
+		"img": "img/art/galaxy.png",
+		"ProjectUrl": "",
+		"Date": "10-20-2023"
+	}
+]

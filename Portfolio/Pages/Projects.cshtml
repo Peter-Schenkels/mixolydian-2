@@ -1,0 +1,13 @@
+﻿@page
+@using Portfolio.Components
+@model ProjectsModel
+@{
+	ViewData["Title"] = "Projects";
+}
+
+<div class="container-fluid bd-content">
+<h1>@ViewData["Title"]</h1>
+
+
+@(await Html.RenderComponentAsync<ProjectList>(RenderMode.ServerPrerendered))
+</div>

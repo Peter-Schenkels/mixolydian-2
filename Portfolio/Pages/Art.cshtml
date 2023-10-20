@@ -1,0 +1,13 @@
+﻿@page
+@using Portfolio.Components
+@model ArtModel
+@{
+	ViewData["Title"] = "Art";
+}
+
+<div class="container-fluid bd-content">
+	<h1 class="mx-auto">@ViewData["Title"]</h1>
+
+
+	@(await Html.RenderComponentAsync<ArtList>(RenderMode.ServerPrerendered))
+</div>

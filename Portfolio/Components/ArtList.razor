@@ -1,0 +1,55 @@
+﻿@using Portfolio.Models
+@using Portfolio.Services
+@using Microsoft.AspNetCore.Components.Web
+@inject JsonDataService ProjectService
+
+<style type="text/css">
+
+	.fields {
+		background-image: url("img/decoration/fields.png");
+		background-repeat: repeat-x;
+		position: relative;
+		width: 100vw;
+		height: 13vh;
+		background-size: 50%;
+		image-rendering: pixelated;
+		margin-left: -37vw;
+		z-index: -6;
+		margin-bottom: -2vh;
+		margin-top: -10vh;
+	}
+</style>
+
+<div class="container-sm">
+	<div class="row row-cols-md-3">
+		@foreach (var art in ProjectService.GetArt())
+		{
+			<div class="col my-3">
+				<div class="card h-100 border-light mb-3 text-bg-dark bg-black border-3 rounded-0 my-3">
+					<div>
+					<a href="@art.Image">
+						<img src="@art.Image" class="card-img-top" style="object-fit: cover; image-rendering: pixelated;" alt="...">
+						</a>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">@art.Name</h5>
+						<p class="card-text fs-6 lh-1">@art.Date></p>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+	<div>
+
+	</div>
+</div>
+<div>
+	<div class="fields"></div>
+</div>
+
+
+@code
+{
+
+}
+

@@ -1,0 +1,52 @@
+﻿@using Portfolio.Models
+@using Portfolio.Services
+@using Microsoft.AspNetCore.Components.Web
+@inject JsonDataService ProjectService
+
+<style type="text/css">
+	.musicbox {
+		width: 70%;
+	}
+
+	@@media (max-width: 768px) {
+		.musicbox {
+			width: 95%;
+		}
+
+		.hide-mobile {
+			display: none;
+			height: 0;
+			width: 0;
+		}
+	}
+</style>
+
+<div class="container-sm">
+	<div class="row row-cols-1">
+
+		@{
+			var art = ProjectService.GetMusic().First();
+			<div class="col my-3">
+				<div class="card mx-auto border-light mb-3 text-bg-dark bg-black border-3 rounded-0 my-3 musicbox">
+					<div>
+						<a href="@art.Url">
+							<img src="@art.Cover" class="card-img-top" style="object-fit: cover; image-rendering: pixelated;" alt="...">
+						</a>
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">@art.Name</h5>
+						<p class="card-text fs-6 lh-1">> @art.Genres</p>
+						<p class="card-text fs-6 lh-1">> @art.Date</p>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+</div>
+
+
+@code
+{
+
+}
+
