@@ -1,4 +1,5 @@
 ﻿using Portfolio.Models;
+using System.Globalization;
 using System.Text.Json;
 
 namespace Portfolio.Services
@@ -25,21 +26,21 @@ namespace Portfolio.Services
         public IEnumerable<Project> GetProjects()
         {
             var projects = GetData<Project>(FileNameProjects).ToList();
-            projects.Sort((a, b) => DateTime.Compare(DateTime.Parse(b.Date), DateTime.Parse(a.Date)));
+            projects.Sort((a, b) => DateTime.Compare(DateTime.Parse(b.Date, new CultureInfo("en-us", false)), DateTime.Parse(a.Date, new CultureInfo("en-us", false))));
             return projects;
         }
 
         public IEnumerable<Art> GetArt()
         {
             var art = GetData<Art>(FileNameArt).ToList();
-            art.Sort((a, b) => DateTime.Compare(DateTime.Parse(b.Date), DateTime.Parse(a.Date)));
+            art.Sort((a, b) => DateTime.Compare(DateTime.Parse(b.Date, new CultureInfo("en-us", false)), DateTime.Parse(a.Date, new CultureInfo("en-us", false))));
             return art;
         }
 
         public IEnumerable<Music> GetMusic() 
         {
             var music = GetData<Music>(FileNameMusic).ToList();
-            music.Sort((a, b) => DateTime.Compare(DateTime.Parse(b.Date), DateTime.Parse(a.Date)));
+            music.Sort((a, b) => DateTime.Compare(DateTime.Parse(b.Date, new CultureInfo("en-us", false)), DateTime.Parse(a.Date, new CultureInfo("en-us", false))));
             return music;
         }
 
