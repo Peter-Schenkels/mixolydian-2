@@ -1,14 +1,14 @@
 ﻿using Portfolio.Models;
-using System.Globalization;
+using System.Net;
 using System.Text.Json;
 
 namespace Portfolio.Services
 {
     public class JsonDataService
     {
-        public string FileNameProjects => Path.Combine(WebHostEnvironment.WebRootPath, "data", "projects.json");
-        public string FileNameArt => Path.Combine(WebHostEnvironment.WebRootPath, "data", "art.json");
-        public string FileNameMusic => Path.Combine(WebHostEnvironment.WebRootPath, "data", "music.json");
+        public string FileNameProjects => "http://2.56.212.56:81//projects.json";
+        public string FileNameArt => "http://2.56.212.56:81//art.json";
+        public string FileNameMusic => "http://2.56.212.56:81//music.json";
 
         public IWebHostEnvironment WebHostEnvironment { get; }
         
@@ -26,21 +26,21 @@ namespace Portfolio.Services
         public IEnumerable<Project> GetProjects()
         {
             var projects = GetData<Project>(FileNameProjects).ToList();
-            projects.Sort((a, b) => DateTime.Compare(DateTime.Parse(b.Date, new CultureInfo("en-us", false)), DateTime.Parse(a.Date, new CultureInfo("en-us", false))));
+            projects.Sort((a, b) => DateTime.Compare(DateTime.Parse(b.Date), DateTime.Parse(a.Date)));
             return projects;
         }
 
         public IEnumerable<Art> GetArt()
         {
             var art = GetData<Art>(FileNameArt).ToList();
-            art.Sort((a, b) => DateTime.Compare(DateTime.Parse(b.Date, new CultureInfo("en-us", false)), DateTime.Parse(a.Date, new CultureInfo("en-us", false))));
+            art.Sort((a, b) => DateTime.Compare(DateTime.Parse(b.Date), DateTime.Parse(a.Date)));
             return art;
         }
 
         public IEnumerable<Music> GetMusic() 
         {
             var music = GetData<Music>(FileNameMusic).ToList();
-            music.Sort((a, b) => DateTime.Compare(DateTime.Parse(b.Date, new CultureInfo("en-us", false)), DateTime.Parse(a.Date, new CultureInfo("en-us", false))));
+            music.Sort((a, b) => DateTime.Compare(DateTime.Parse(b.Date), DateTime.Parse(a.Date)));
             return music;
         }
 
@@ -49,20 +49,24 @@ namespace Portfolio.Services
         {
             try
             {
-                using var jsonFileReader = File.OpenText(path);
-                var serializingOptions = new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true
-                };
+                HttpClient httpClient = new ();
 
+                var request = WebRequest.CreateHttp(path);
+                request.Method = "GET";
 
-                var projects = JsonSerializer.Deserialize<T[]>(jsonFileReader.ReadToEnd(), serializingOptions);
-                if (projects == null)
+                using (var response = (HttpWebResponse)request.GetResponse())
                 {
-                    Console.WriteLine($"Error: {path} is empty.");
-                    return new List<T>();
+                    var stream = response.GetResponseStream();
+                    var projects = JsonSerializer.Deserialize<T[]>(stream);
+
+                    if (projects == null)
+                    {
+                        Console.WriteLine($"Error: {path} is empty.");
+                        return new List<T>();
+                    }
+
+                    return projects;
                 }
-                return projects;
             }
             catch (Exception e)
             {

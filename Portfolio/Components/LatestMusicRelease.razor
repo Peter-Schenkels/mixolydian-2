@@ -25,7 +25,11 @@
 	<div class="row row-cols-1">
 
 		@{
-			var art = ProjectService.GetMusic().First();
+			var entries = ProjectService.GetMusic();
+			if (entries.Count() == 0)
+				return;
+
+			var art = entries.First();
 			<div class="col my-3">
 				<div class="card mx-auto border-light mb-3 text-bg-dark bg-black border-3 rounded-0 my-3 musicbox">
 					<div>
