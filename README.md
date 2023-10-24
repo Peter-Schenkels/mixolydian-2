@@ -1,2 +1,2 @@
-# mixolydian-2
-new site, new better...
+# Mixolydian-2
+Portfolio site project repository
