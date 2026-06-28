@@ -6,8 +6,6 @@
 }
 
 <div class="container-fluid bd-content">
-	<h1 class="text-center">@ViewData["Title"]</h1>
-
-
-	@(await Html.RenderComponentAsync<MusicList>(RenderMode.ServerPrerendered))
-	</di
+    <h1 class="text-center">@ViewData["Title"]</h1>
+    @(await Html.RenderComponentAsync<MusicList>(RenderMode.ServerPrerendered))
+</div>

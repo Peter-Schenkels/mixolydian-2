@@ -1,6 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Portfolio.Models
+@using Portfolio.Services
+<!DOCTYPE html>
 <html lang="en" class="h-100" data-bs-theme="dark">
-
+@inject JsonDataService ProjectService
 
 
 <head>
@@ -13,7 +15,7 @@
 	<style type="text/css">
 		@@font-face {
 			font-family: Hooge;
-			src: url("fonts/hoog0554.ttf");
+			src: url("/fonts/hoog0554.ttf");
 		}
 
 		.custom {
@@ -77,31 +79,13 @@
 		}
 
 		html {
-			font-size: 1rem;
+			font-size: 22px;
 			height: max-content;
 		}
 
 		body {
 			min-height: 100vh;
 			overflow-y: hidden;
-		}
-
-		@@include media-breakpoint-up(sm) {
-			html {
-				font-size: 0.8rem;
-			}
-		}
-
-		@@include media-breakpoint-up(md) {
-			html {
-				font-size: 0.4rem;
-			}
-		}
-
-		@@include media-breakpoint-up(lg) {
-			html {
-				font-size: 0.2rem;
-			}
 		}
 
 		.icon {
@@ -207,7 +191,7 @@
 		.parallax__layer--7 {
 			transform: translateZ(-20000px) scale(80.5);
 			z-index: -7;
-			background-image: url("img/decoration/clouds-7.png");
+			background-image: url("https://data.peterschenkels.nl/img/decoration/clouds-7.png");
 			background-repeat: repeat;
 			background-size: 50%;
 		}
@@ -215,7 +199,7 @@
 		.parallax__layer--6 {
 			transform: translateZ(-10000px) scale(40.5);
 			z-index: -6;
-			background-image: url("img/decoration/stars-6.png");
+			background-image: url("https://data.peterschenkels.nl/img/decoration/stars-6.png");
 			background-repeat: repeat;
 			background-size: 50%;
 		}
@@ -223,7 +207,7 @@
 		.parallax__layer--5 {
 			transform: translateZ(-4000px) scale(17.5);
 			z-index: -5;
-			background-image: url("img/decoration/stars-5.png");
+			background-image: url("https://data.peterschenkels.nl/img/decoration/stars-5.png");
 			background-repeat: repeat;
 			background-size: 50%;
 		}
@@ -231,7 +215,7 @@
 		.parallax__layer--4 {
 			transform: translateZ(-3000px) scale(15);
 			z-index: -4;
-			background-image: url("img/decoration/stars-4.png");
+			background-image: url("https://data.peterschenkels.nl/img/decoration/stars-4.png");
 			background-repeat: repeat;
 			background-size: 50%;
 		}
@@ -239,7 +223,7 @@
 		.parallax__layer--3 {
 			transform: translateZ(-2000px) scale(12.5);
 			z-index: -3;
-			background-image: url("img/decoration/stars-3.png");
+			background-image: url("https://data.peterschenkels.nl/img/decoration/stars-3.png");
 			background-repeat: repeat;
 			background-size: 50%;
 		}
@@ -247,7 +231,7 @@
 		.parallax__layer--2 {
 			transform: translateZ(-400px) scale(3.1);
 			z-index: -2;
-			background-image: url("img/decoration/planet-2.png");
+			background-image: url("https://data.peterschenkels.nl/img/decoration/planet-2.png");
 			background-repeat: repeat;
 			background-size: 50%;
 		}
@@ -255,7 +239,7 @@
 		.parallax__layer--1 {
 			transform: translateZ(-300px) scale(2.1);
 			z-index: -1;
-			background-image: url("img/decoration/planet-1.png");
+			background-image: url("https://data.peterschenkels.nl/img/decoration/planet-1.png");
 			background-repeat: repeat;
 			background-size: 50% auto;
 		}
@@ -314,49 +298,48 @@
 		</div>
 	</header>
 
+
 	<div class="container h-100 m-0 p-0" style="min-width: 100vw;">
-		<div class="hidden-mobile sidebar border-start border-end border-4 border-light">
-			<div style="height: 8px" class="border-top border-bottom border-light border-2 my-1"></div>
-			<div class="mx-auto text-center">
-				<img src="img/mugshot/mugshot.png" style="width: 10vw; height: auto" class="img-fluid p-3 " />
-			</div>
+		@{
+			Personalia personalia = ProjectService.GetPersonalia();
 
-			<div style="height: 8px" class="border-top border-bottom border-light border-2 my-1"></div>
-			<p class="fs-4 lh-1 text-capitalize">Peter Schenkels</p>
-
-			<div class="hidden-mobile-horizontal">
-				<p class="fs-6 lh-1">Game Developer, Musician, Producer, Programmer</p>
-				<div style="height: 4px" class="border-bottom border-light border-2 my-1"></div>
-			</div>
-			<div class="container">
-				<div style="height: 4px" class="border-bottom border-light border-2 my-1"></div>
-				<div class="row">
-					<a href="https://open.spotify.com/artist/7HfHtWRyLGCu0ND1gX8zCu?si=C9G3P5SHS2CBFtWJGUym9Q" class="col button mw-25" style="width: 20%;">
-						<img class="icon border border-light border-2 w-100 h-100" src="img/icons/spotify.png" />
-					</a>
-					<a href="https://www.linkedin.com/in/peter-schenkels/" class="col button mw-25" style="width: 20%">
-						<img class="icon border border-light border-2 w-100 h-100" src="img/icons/linkedin.png" />
-					</a>
-					<a href="https://github.com/Peter-Schenkels/" class="col button mw-25" style="width: 20%">
-						<img class="icon border border-light border-2 w-100 h-100" src="img/icons/github.png" />
-					</a>
-					<a href="mailto:peteraschenkels@gmail.com"class="col button mw-25" style="width: 20%">
-						<img class="icon border border-light border-2 w-100 h-100" src="img/icons/email.png" />
-					</a>
+			<div class="hidden-mobile sidebar border-start border-end border-4 border-light">
+				<div style="height: 8px" class="border-top border-bottom border-light border-2 my-1"></div>
+				<div class="mx-auto text-center">
+					<img src=@personalia.MugShotUrl style="width: 10vw; height: auto" class="img-fluid p-3 " />
 				</div>
-				<div style="height: 4px" class="border-bottom border-light border-2 my-1"></div>
+
+				<div style="height: 8px" class="border-top border-bottom border-light border-2 my-1"></div>
+
+
+				<p class="fs-4 lh-1 text-capitalize">@personalia.Title</p>
+
+				<div class="hidden-mobile-horizontal">
+					<p class="fs-6 lh-1">@personalia.Quote</p>
+					<div style="height: 4px" class="border-bottom border-light border-2 my-1"></div>
+				</div>
+
+
+				<div class="container">
+					<div style="height: 4px" class="border-bottom border-light border-2 my-1"></div>
+					<div class="row">
+						<a href="https://open.spotify.com/artist/7HfHtWRyLGCu0ND1gX8zCu?si=C9G3P5SHS2CBFtWJGUym9Q" class="col button mw-25" style="width: 20%;">
+							<img class="icon border border-light border-2 w-100 h-100" src="https://data.peterschenkels.nl/img/icons/spotify.png" />
+						</a>
+						<a href="https://www.linkedin.com/in/peter-schenkels/" class="col button mw-25" style="width: 20%">
+							<img class="icon border border-light border-2 w-100 h-100" src="https://data.peterschenkels.nl/img/icons/linkedin.png" />
+						</a>
+						<a href="https://github.com/Peter-Schenkels/" class="col button mw-25" style="width: 20%">
+							<img class="icon border border-light border-2 w-100 h-100" src="https://data.peterschenkels.nl/img/icons/github.png" />
+						</a>
+						<a href="mailto:peteraschenkels@gmail.com"class="col button mw-25" style="width: 20%">
+							<img class="icon border border-light border-2 w-100 h-100" src="https://data.peterschenkels.nl/img/icons/email.png" />
+						</a>
+					</div>
+					<div style="height: 4px" class="border-bottom border-light border-2 my-1"></div>
+				</div>
 			</div>
-			<div class="hidden-mobile-horizontal">
-				<div style="height: 4px" class="border-bottom border-light border-2 my-1"></div>
-				<p class="fs-6 lh-1">Work Experience:</p>
-				<p class="fs-6 lh-1">* Ronimo Games: 1 Year</p>
-				<p class="fs-6 lh-1">* Music Producer: 5 Years</p>
-				<div style="height: 4px" class="border-bottom border-light border-2 my-1"></div>
-				<p class="fs-6 lh-1">Education:</p>
-				<p class="fs-6 lh-1">* Bachelors Degree in Technical Computer Science
-				<p />
-			</div>
-		</div>
+		}
 		<div class="border border-light border-4 border-bottom-0 border-top-0">
 			<div class="parallax">
 				<div class="parallax__layer parallax__layer--7 galaxy"></div>

@@ -4,9 +4,8 @@
 @inject JsonDataService ProjectService
 
 <style type="text/css">
-
 	.fields {
-		background-image: url("img/decoration/fields.png");
+		background-image: url("https://data.peterschenkels.nl/img/decoration/fields.png");
 		background-repeat: repeat-x;
 		position: relative;
 		width: 100vw;
@@ -18,22 +17,43 @@
 		margin-bottom: -2vh;
 		margin-top: -10vh;
 	}
+
+	.release-title {
+		font-size: 1.20rem;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		text-align: center;
+		margin-top: 1vh;
+		margin-left: 1vh;
+		margin-right: 1vh;
+	}
+
+	.release-body {
+		min-height: auto;
+	}
+
+	.release-details{
+		font-size: 0.80rem;
+		margin: 0;
+	}
 </style>
 
 <div class="container-sm">
-	<div class="row row-cols-md-3">
+	<div class="row row-cols-md-2">
 		@foreach (var art in ProjectService.GetArt())
 		{
 			<div class="col my-3">
 				<div class="card h-100 border-light mb-3 text-bg-dark bg-black border-3 rounded-0 my-3">
 					<div>
-					<a href="@art.Image">
-						<img src="@art.Image" class="card-img-top" style="object-fit: cover; image-rendering: pixelated;" alt="...">
+						<a href="@art.Image">
+							<img src="@art.Image" class="card-img-top rounded-0" style="object-fit: cover; image-rendering: pixelated;" alt="...">
 						</a>
 					</div>
-					<div class="card-body">
-						<h5 class="card-title">@art.Name</h5>
-						<p class="card-text fs-6 lh-1">@art.Date></p>
+					<div class="card-title">
+						<h5 class="release-title">@art.Name</h5>
+					</div>
+					<div class="card-footer release-body">
+						<p class="text-muted release-details">@art.Date></p>
 					</div>
 				</div>
 			</div>

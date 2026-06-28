@@ -5,7 +5,24 @@
 
 <style type="text/css">
 	.musicbox {
-		width: 70%;
+		width: 50%;
+		aspect-ratio: 1 / 1;
+	}
+
+	.release-title {
+		font-size: 1rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-align: center;
+		margin-top: 1vh;
+		margin-left: 1vh;
+		margin-right: 1vh;
+	}
+
+	.release-details{
+		font-size: 0.80rem;
+		margin: 0;
 	}
 
 	@@media (max-width: 768px) {
@@ -34,13 +51,16 @@
 				<div class="card mx-auto border-light mb-3 text-bg-dark bg-black border-3 rounded-0 my-3 musicbox">
 					<div>
 						<a href="@art.Url">
-							<img src="@art.Cover" class="card-img-top" style="object-fit: cover; image-rendering: pixelated;" alt="...">
+							<img src="@art.Cover" class="rounded-0 card-img-top" style="object-fit: cover; image-rendering: pixelated;" alt="...">
 						</a>
 					</div>
-					<div class="card-body">
-						<h5 class="card-title">@art.Name</h5>
-						<p class="card-text fs-6 lh-1">> @art.Genres</p>
-						<p class="card-text fs-6 lh-1">> @art.Date</p>
+					<div class="card-title">
+						<h5 class="release-title">@art.Name</h5>
+					</div>
+					<div class="card-footer">
+						<p class="release-details">> @art.Type</p>
+						<p class="release-details">> @art.Genres</p>
+						<p class="release-details">> @art.Date</p>
 					</div>
 				</div>
 			</div>

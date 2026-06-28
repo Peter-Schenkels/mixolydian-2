@@ -4,9 +4,8 @@
 @inject JsonDataService ProjectService
 
 <style type="text/css">
-
 	.fields {
-		background-image: url("img/decoration/fields.png");
+		background-image: url("https://data.peterschenkels.nl/img/decoration/fields.png");
 		background-repeat: repeat-x;
 		position: relative;
 		width: 100vw;
@@ -19,8 +18,35 @@
 		margin-top: -10vh;
 	}
 
-	.musicbox{
-		   width: 70%;
+	.musicbox {
+		width: 100%;
+		aspect-ratio: 1 / 1;
+
+	}
+
+	.release-title {
+		font-size: 0.9rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		text-align: center;
+		margin-top: 1vh;
+		margin-left: 1vh;
+		margin-right: 1vh;
+	}
+
+	.release-details{
+		font-size: 0.70rem;
+		margin: 0;
+	}
+
+	.release-body {
+		min-height: 10vh;
+		max-height: 10vh;
+	}
+
+	.columns-music row-cols-md-3 {
+
 	}
 
 	@@media (max-width: 768px) {
@@ -37,26 +63,26 @@
 </style>
 
 <div class="container-sm">
-	<div class="row row-cols-1">
+	<div class="row row-cols-md-3">
 		@foreach (var art in ProjectService.GetMusic())
 		{
-			<div style="height: 2vh; width: 68%;" class="hide-mobile mx-auto border-top border-bottom border-3 border-light"></div>
-			<div style="height: 2vh; width: 68%;" class="hide-mobile mx-auto border-top border-bottom border-3 border-light"></div>
 			<div class="col my-3">
-				<div class="card mx-auto border-light mb-3 text-bg-dark bg-black border-3 rounded-0 my-3 musicbox">
+				<div class="card mx-auto border-3 rounded-0 my-3 border-light mb-3 text-bg-dark bg-black musicbox">
 					<div>
 						<a href="@art.Url">
-							<img src="@art.Cover" class="card-img-top" style="object-fit: cover; image-rendering: pixelated;" alt="...">
+							<img src="@art.Cover" class="card-img-top rounded-0" style="object-fit: cover; image-rendering: pixelated;" alt="...">
 						</a>
 					</div>
-					<div class="card-body">
-						<h5 class="card-title">@art.Name</h5>
-						<p class="card-text fs-6 lh-1">> @art.Genres</p>
-						<p class="card-text fs-6 lh-1">> @art.Date</p>
+					<div class="align-content-center">
+						<h5 class="release-title">@art.Name</h5>
+					</div>
+					<div class="release-body card-footer">
+						<p class="card-text release-details">> @art.Type</p>
+						<p class="card-text release-details">> @art.Genres</p>
+						<p class="card-text release-details">> @art.Date</p>
 					</div>
 				</div>
 			</div>
-
 		}
 	</div>
 </div>
